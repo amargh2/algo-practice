@@ -51,7 +51,7 @@ function mergeSort2(array, sorted = []) {
 }
 
 
-const dummyArray = [18, 55, 33, 400, 12]
+const dummyArray = [18, 55, 400, 12]
 
 const sortMerge = (array, sorted=[]) => {
   
@@ -82,13 +82,13 @@ const sortMerge = (array, sorted=[]) => {
   } if (right.length === 1) {
     mergedRight.push(right[0])
   } if (right.length > 2) {
-    console.log(sortMerge(right, sorted))
+    console.log('right greater than 2 returns: ' + sortMerge(right, sorted))
   } if (left.length > 2) {
-    console.log(sortMerge(left, sorted))
+    console.log('left greater than 2 returns: ' + sortMerge(left, sorted))
   }
   console.log('merged left and merged right: ' + mergedLeft, mergedRight)
 
-  mergedRight[0] > mergedLeft[-1] ? sorted.concat(mergedLeft.push(mergedRight)) : sorted.concat(mergedRight.push(mergedLeft)) 
+  mergedRight[0] > mergedLeft[-1] ? sorted.push(mergedLeft.concat(mergedRight)) : sorted.push(mergedRight.concat(mergedLeft)) 
 
 
   return sorted
